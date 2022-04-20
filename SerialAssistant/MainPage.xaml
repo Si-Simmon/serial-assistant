@@ -154,7 +154,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBox  x:Name="SendBox" Grid.Column="0" Margin="0,0,3,0" AcceptsReturn="True"  TextWrapping="Wrap" />
                 <Button x:Name="Send" Grid.Column="1" HorizontalAlignment="Center" Width="200" Height="200" Content="发送"
-                        Click="Send_msg"/>
+                        Click="send_Msg"/>
             </Grid>
 
         </Grid>

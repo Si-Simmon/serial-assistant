@@ -296,7 +296,7 @@ namespace SerialAssistant
             }
         }
         //发送消息回调
-        private void Send_msg(object sender, RoutedEventArgs e)
+        private void send_Msg(object sender, RoutedEventArgs e)
         {
 
             if (SendBox.Text == String.Empty)
@@ -428,10 +428,9 @@ namespace SerialAssistant
         //下拉事件
         private void SerialPort_DropDownOpened(object sender, object e)
         {
-            // ShowMessge("串口刷新");
             _ = StartAsync();
         }
-
+        //选择框改变回调
         private void box_Click(object sender, RoutedEventArgs e)
         {
             string selectedToppingsText = string.Empty;
@@ -451,16 +450,17 @@ namespace SerialAssistant
 
             }
         }
+        //清除文本框回调
         private void clear_button_Data(object sender, RoutedEventArgs e)
         {
             ReceivingBox.Text = "";
         }
-
+        //保存数据回调
         private void save_button_Click(object sender, RoutedEventArgs e)
         {
             printf("待开发："+sava_button.Content);
         }
-
+        //扩展命令回调
         private void explosion_button_Click(object sender, RoutedEventArgs e)
         {
             printf("待开发：" + explosion_button.Content);
