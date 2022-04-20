@@ -93,12 +93,12 @@ namespace SerialAssistant
 
             _ = StartAsync();
 
-            ShowMessge("初始化成功");
+            printf("作者：江小鉴");
         }
 
 
         //窗口底部提示消息
-        private async Task ShowMessge(String str)
+        private async Task printf(String str)
         {
 
             Message.Text = str;
@@ -175,7 +175,7 @@ namespace SerialAssistant
 
                 if (serialDeviceInfos == null)
                 {
-                    ShowMessge("没有串口");
+                    printf("没有串口");
                     return;
                 }
                 else
@@ -197,7 +197,7 @@ namespace SerialAssistant
 
                     if (serialDevice != null)
                     {
-                        ShowMessge("串口已打开");
+                        printf("串口已打开");
                         SerialLock = true;
                         serialId = serialDeviceInfos[SerialPort.SelectedIndex].Id;
                         Open.Content = "关闭串口";
@@ -230,7 +230,7 @@ namespace SerialAssistant
                     }
                     else
                     {
-                        ShowMessge("打开串口出现错误");
+                        printf("打开串口出现错误");
                     }
                 }
             }
@@ -241,7 +241,7 @@ namespace SerialAssistant
                 SerialLock = false;
                 Open.Background = new SolidColorBrush(Color.FromArgb(100, 90, 90, 90));
                 Open.Content = "打开串口";
-                ShowMessge("串口已关闭");
+                printf("串口已关闭");
             }
 
         }
@@ -301,7 +301,7 @@ namespace SerialAssistant
 
             if (SendBox.Text == String.Empty)
             {
-                ShowMessge("请输入要发送的内容！");
+                printf("请输入要发送的内容！");
                 return;
             }
             //   Debug.WriteLine(SendBox.Text);
@@ -309,7 +309,7 @@ namespace SerialAssistant
             {
                 //   Debug.WriteLine("发送");
                 _ = send();
-                ShowMessge("已发送");
+                printf("已发送");
 
                 //  IBuffer buffer = CryptographicBuffer.ConvertStringToBinary("hello world!", BinaryStringEncoding.Utf8);
                 //       str = CryptographicBuffer.ConvertBinaryToString(BinaryStringEncoding.Utf8, buffer);
@@ -319,7 +319,7 @@ namespace SerialAssistant
             else
             {
 
-                ShowMessge("串口未打开");
+                printf("串口未打开");
             }
         }
         //发送消息
@@ -432,6 +432,39 @@ namespace SerialAssistant
             _ = StartAsync();
         }
 
+        private void box_Click(object sender, RoutedEventArgs e)
+        {
+            string selectedToppingsText = string.Empty;
+            CheckBox[] checkboxes = new CheckBox[] { box1,box1,box2,box3,box4,box5,box6,box7,box8,box9,box10,box11,box12};
+            foreach (CheckBox c in checkboxes)
+            {
+               if (c.IsChecked == true)
+                {
+                    c.IsChecked = false;
+                    printf("待开发:"+c.Content);
+                }
+                /* 
+                 if (c.IsChecked == false)
+                 {
+                     ShowMessge(c.Name + "取消选中");
+                 }*/
+
+            }
+        }
+        private void clear_button_Data(object sender, RoutedEventArgs e)
+        {
+            ReceivingBox.Text = "";
+        }
+
+        private void save_button_Click(object sender, RoutedEventArgs e)
+        {
+            printf("待开发："+sava_button.Content);
+        }
+
+        private void explosion_button_Click(object sender, RoutedEventArgs e)
+        {
+            printf("待开发：" + explosion_button.Content);
+        }
     }
 
 

@@ -72,28 +72,28 @@
 
 
                     <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,0">
-                        <CheckBox x:Name="box1" Height="32" Content="接收并保存到文件" />
+                        <CheckBox x:Name="box1" Height="32" Content="接收并保存到文件" Click="box_Click"/>
                     </RelativePanel>
                     <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,-1">
-                        <CheckBox x:Name="box2" Height="32" Content="十六进制显示" />
+                        <CheckBox x:Name="box2" Height="32" Content="十六进制显示" Click="box_Click"/>
                     </RelativePanel>
                     <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,0">
-                        <CheckBox x:Name="box3" Height="32" Content="暂停接收显示" />
+                        <CheckBox x:Name="box3" Height="32" Content="暂停接收显示" Click="box_Click"/>
 
                     </RelativePanel>
                     <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,0">
-                        <CheckBox x:Name="box4" Height="32" Content="自动断帧" />
+                        <CheckBox x:Name="box4" Height="32" Content="自动断帧" Click="box_Click"/>
                         <TextBox x:Name="BrokenFrame" RelativePanel.AlignRightWithPanel="True" Text="20"  TextAlignment="Center" TextChanged="TextBox_TextChanged"/>
                     </RelativePanel>
                     <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,5">
-                        <CheckBox x:Name="box5" Height="32" Content="接收脚本" />
+                        <CheckBox x:Name="box5" Height="32" Content="接收脚本" Click="box_Click"/>
                         <ComboBox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="100" />
                     </RelativePanel>
 
 
                     <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,5">
-                        <Button Content="保存数据" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignLeftWithPanel="True"/>
-                        <Button Content="清除数据" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True"/>
+                        <Button x:Name="sava_button" Content="保存数据" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Click="save_button_Click"/>
+                        <Button x:Name="clear_button" Content="清除数据" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Click="clear_button_Data"/>
                     </RelativePanel>
 
 
@@ -103,23 +103,23 @@
 
 
                     <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,0">
-                        <CheckBox x:Name="box6" Height="32" Content="发送文件" />
-                        <Button RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Content="扩展命令" />
+                        <CheckBox x:Name="box6" Height="32" Content="发送文件" Click="box_Click"/>
+                        <Button x:Name="explosion_button" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Content="扩展命令" Click="explosion_button_Click"/>
                     </RelativePanel>
                     <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,0">
-                        <CheckBox x:Name="box7" Height="32" Content="十六进制发送" />
+                        <CheckBox x:Name="box7" Height="32" Content="十六进制发送" Click="box_Click"/>
                     </RelativePanel>
                     <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,-1">
-                        <CheckBox x:Name="box8" Height="32" Content="发送脚本" />
+                        <CheckBox x:Name="box8" Height="32" Content="发送脚本" Click="box_Click"/>
 
                     </RelativePanel>
                     <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,0">
-                        <CheckBox x:Name="box9" Height="32" Content="定时发送" />
+                        <CheckBox x:Name="box9" Height="32" Content="定时发送" Click="box_Click"/>
                         <TextBox x:Name="TimedTransmission" RelativePanel.AlignRightWithPanel="True" Text="20"  TextAlignment="Center"/>
                     </RelativePanel>
                     <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,5">
-                        <CheckBox x:Name="box10" Height="32" Content="DTR" />
-                        <CheckBox x:Name="box11" Height="32" Content="RTS" RelativePanel.RightOf="box10" />
+                        <CheckBox x:Name="box10" Height="32" Content="DTR" Click="box_Click"/>
+                        <CheckBox x:Name="box11" Height="32" Content="RTS" RelativePanel.RightOf="box10" Click="box_Click"/>
                     </RelativePanel>
 
                     <RelativePanel Height="0.5" Background="#FF636363" Margin="0,5,0,5" Width="280"/>
@@ -129,7 +129,7 @@
                     </RelativePanel>
 
                     <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,5">
-                        <CheckBox x:Name="box12" Height="32" Content="显示发送字符串" />
+                        <CheckBox x:Name="box12" Height="32" Content="显示发送字符串" Click="box_Click"/>
                         <ComboBox x:Name="ShowChar" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="100" />
                     </RelativePanel>
 
