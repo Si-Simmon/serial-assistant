@@ -30,6 +30,7 @@ namespace SerialAssistant
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+           // RequestedTheme = ApplicationTheme.Dark;
         }
 
         /// <summary>

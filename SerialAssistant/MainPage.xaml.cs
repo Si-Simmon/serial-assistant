@@ -127,7 +127,7 @@ namespace SerialAssistant
 
             foreach (DeviceInformation serialDeviceInfo in serialDeviceInfos)
             {
-                //  Debug.WriteLine("扫描串口" + serialDeviceInfo.Name);
+                Debug.WriteLine("扫描串口" + serialDeviceInfo.Name);
                 fonts0.Add(new FontFamily(serialDeviceInfo.Name));
             }
 
@@ -184,10 +184,11 @@ namespace SerialAssistant
                     {
                         //打开相应id的串口
                         serialDevice = await SerialDevice.FromIdAsync(serialDeviceInfos[SerialPort.SelectedIndex].Id);
+                     
                     }
                     catch
                     {
-                        // ShowMessge(serialDeviceInfos[SerialPort.SelectedIndex].Name+"串口打开失败");                
+                        printf(serialDeviceInfos[SerialPort.SelectedIndex].Name+"串口打开失败");                
                         return;
                     }
 

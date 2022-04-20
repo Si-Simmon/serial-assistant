@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="e497dfd0-fdbe-4003-b841-839b99c8bdc7"
-    Publisher="CN=Abyss"
-    Version="2.0.4.0" />
+    Name="63131AAD40D23.33499DC43701D"
+    Publisher="CN=5A35E57F-C957-4E72-BA6B-78E3AE501DD4"
+    Version="2.2.5.0" />
 
-  <mp:PhoneIdentity PhoneProductId="e497dfd0-fdbe-4003-b841-839b99c8bdc7" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="311f0d20-cde9-483d-9c32-077a1690497d" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>SerialAssistant</DisplayName>
-    <PublisherDisplayName>Abyss</PublisherDisplayName>
+    <DisplayName>我的串口助手</DisplayName>
+    <PublisherDisplayName>江小鉴</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -48,6 +48,14 @@
   </Applications>
 
   <Capabilities>
-    <Capability Name="internetClient" />
+	  
+	  <Capability Name="internetClient" />
+	  <DeviceCapability Name="bluetooth" />
+	  <DeviceCapability Name="serialcommunication">
+		  <Device Id="any">
+			  <Function Type="name:serialPort" />
+		  </Device>
+	  </DeviceCapability>
+	  
   </Capabilities>
 </Package>
