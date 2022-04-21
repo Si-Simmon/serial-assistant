@@ -21,73 +21,73 @@
                 <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
 
-            <ScrollViewer  Grid.Row="0"  ViewChanged="ScrollViewer_ViewChanged">
+            <ScrollViewer  Grid.Row="0"  >
                 <StackPanel  HorizontalAlignment="Stretch" Padding="10,10,10,10" Width="300" >
-                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,0">
+                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,0,0">
                         <TextBlock  Text="串口号:" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FlowDirection="LeftToRight" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignLeftWithPanel="True" />
-                        <ComboBox x:Name="SerialPort" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="100" 
+                        <ComboBox x:Name="SerialPort" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="100" Height="30" 
                                  ItemsSource="{x:Bind fonts0}" DisplayMemberPath="Source"
-                              SelectionChanged="serial_SelectionChanged" DropDownOpened="SerialPort_DropDownOpened"
+                              SelectionChanged="serial_SelectionChanged" DropDownOpened="SerialPort_DropDownOpened" FontSize="12"
                                  />
                     </RelativePanel>
 
-                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,0">
+                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,2,0,0">
                         <TextBlock  Text="波特率:" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FlowDirection="LeftToRight" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignLeftWithPanel="True" />
-                        <ComboBox x:Name="BaudRate" RelativePanel.AlignVerticalCenterWithPanel="True" 
+                        <ComboBox x:Name="BaudRate" RelativePanel.AlignVerticalCenterWithPanel="True" Height="30" FontSize="12"
                               RelativePanel.AlignRightWithPanel="True" Width="100" 
                               ItemsSource="{x:Bind fonts1}" DisplayMemberPath="Source"
                               SelectionChanged="baud_SelectionChanged"/>
                     </RelativePanel>
 
-                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,0">
+                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,2,0,0">
                         <TextBlock  Text="数据位:" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FlowDirection="LeftToRight" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignLeftWithPanel="True" />
-                        <ComboBox x:Name="DataBits" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="100" 
-                              ItemsSource="{x:Bind fonts2}" DisplayMemberPath="Source"
+                        <ComboBox x:Name="DataBits" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="100"  FontSize="12"
+                              ItemsSource="{x:Bind fonts2}" DisplayMemberPath="Source" Height="30"
                               SelectionChanged="databit_SelectionChanged"/>
                     </RelativePanel>
 
-                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,0">
+                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,2,0,0">
                         <TextBlock  Text="检验位:" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FlowDirection="LeftToRight" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignLeftWithPanel="True" />
-                        <ComboBox x:Name="CheckBit" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="100" 
-                              ItemsSource="{x:Bind fonts3}" DisplayMemberPath="Source"
+                        <ComboBox x:Name="CheckBit" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="100" FontSize="12"
+                              ItemsSource="{x:Bind fonts3}" DisplayMemberPath="Source" Height="30"
                               SelectionChanged="checkbit_SelectionChanged"/>
                     </RelativePanel>
 
-                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,5">
+                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,2,0,5">
                         <TextBlock  Text="停止位:" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FlowDirection="LeftToRight" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignLeftWithPanel="True" />
-                        <ComboBox x:Name="StopBit" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="100" 
-                              ItemsSource="{x:Bind fonts4}" DisplayMemberPath="Source"
+                        <ComboBox x:Name="StopBit" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="100"  FontSize="12"
+                              ItemsSource="{x:Bind fonts4}" DisplayMemberPath="Source" Height="30"
                               SelectionChanged="stopbit_SelectionChanged"/>
                     </RelativePanel>
 
-                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,5">
+                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,3,0,5">
                         <Button x:Name="Open" Height="30" RelativePanel.AlignHorizontalCenterWithPanel="True" Width="280" Content="打开串口"
-                            Click="Open_Click" Background="#33F8F8F8"/>
+                            Click="Open_Click" Background="#336C6C6C"/>
                     </RelativePanel>
 
 
                     <RelativePanel Height="0.5" Background="#FF636363" Margin="0,5,0,5" Width="280"/>
 
-                    <TextBlock Text="接收区设置:" Padding="0,10,0,0"/>
+                    <TextBlock Text="接收区设置:" Padding="0,5,0,0"/>
 
 
-                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,0">
+                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,0,0">
                         <CheckBox x:Name="box1" Height="32" Content="接收并保存到文件" Click="box_Click"/>
                     </RelativePanel>
-                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,-1">
+                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,0,0">
                         <CheckBox x:Name="box2" Height="32" Content="十六进制显示" Click="box_Click"/>
                     </RelativePanel>
-                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,0">
+                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,0,0">
                         <CheckBox x:Name="box3" Height="32" Content="暂停接收显示" Click="box_Click"/>
 
                     </RelativePanel>
                     <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,0">
                         <CheckBox x:Name="box4" Height="32" Content="自动断帧" Click="box_Click"/>
-                        <TextBox x:Name="BrokenFrame" RelativePanel.AlignRightWithPanel="True" Text="20"  TextAlignment="Center" TextChanged="TextBox_TextChanged"/>
+                        <TextBox Style="{StaticResource TextBoxStyle1}" x:Name="BrokenFrame" RelativePanel.AlignRightWithPanel="True"  RelativePanel.AlignVerticalCenterWithPanel="True" Text="20"   TextAlignment="Center" Height="35" FontSize="12"/>
                     </RelativePanel>
                     <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,5">
                         <CheckBox x:Name="box5" Height="32" Content="接收脚本" Click="box_Click"/>
-                        <ComboBox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="100" />
+                        <ComboBox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="100" Height="30" FontSize="12"/>
                     </RelativePanel>
 
 
@@ -102,35 +102,35 @@
                     <TextBlock Text="发送区设置:" Padding="0,10,0,0"/>
 
 
-                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,0">
+                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,0,0">
                         <CheckBox x:Name="box6" Height="32" Content="发送文件" Click="box_Click"/>
                         <Button x:Name="explosion_button" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Content="扩展命令" Click="explosion_button_Click"/>
                     </RelativePanel>
-                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,0">
+                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,0,0">
                         <CheckBox x:Name="box7" Height="32" Content="十六进制发送" Click="box_Click"/>
                     </RelativePanel>
-                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,-1">
+                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,0,0">
                         <CheckBox x:Name="box8" Height="32" Content="发送脚本" Click="box_Click"/>
 
                     </RelativePanel>
-                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,0">
+                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,0,0">
                         <CheckBox x:Name="box9" Height="32" Content="定时发送" Click="box_Click"/>
-                        <TextBox x:Name="TimedTransmission" RelativePanel.AlignRightWithPanel="True" Text="20"  TextAlignment="Center"/>
+                        <TextBox x:Name="TimedTransmission" RelativePanel.AlignRightWithPanel="True" Text="20"   RelativePanel.AlignVerticalCenterWithPanel="True" TextAlignment="Center" Height="35" FontSize="12" Visibility="Visible" RequestedTheme="Default" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </RelativePanel>
-                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,5">
+                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,0,5">
                         <CheckBox x:Name="box10" Height="32" Content="DTR" Click="box_Click"/>
                         <CheckBox x:Name="box11" Height="32" Content="RTS" RelativePanel.RightOf="box10" Click="box_Click"/>
                     </RelativePanel>
 
                     <RelativePanel Height="0.5" Background="#FF636363" Margin="0,5,0,5" Width="280"/>
-                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,5">
+                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,0,0">
                         <TextBlock  Text="换行符:" ScrollViewer.HorizontalScrollBarVisibility="Disabled" FlowDirection="LeftToRight" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignLeftWithPanel="True" />
-                        <ComboBox x:Name="LineBreak" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="100" />
+                        <ComboBox x:Name="LineBreak" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="100" Height="30" FontSize="12"/>
                     </RelativePanel>
 
-                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,5,0,5">
-                        <CheckBox x:Name="box12" Height="32" Content="显示发送字符串" Click="box_Click"/>
-                        <ComboBox x:Name="ShowChar" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="100" />
+                    <RelativePanel HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,0,2">
+                        <CheckBox x:Name="box12"  Content="显示发送字符串" Click="box_Click"/>
+                        <ComboBox x:Name="ShowChar" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" Width="100" Height="30" FontSize="12"/>
                     </RelativePanel>
 
                 </StackPanel>
@@ -146,15 +146,15 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
-            <TextBox  x:Name="ReceivingBox" Grid.Row="0" Margin="0,0,0,4" AcceptsReturn="True"  TextWrapping="Wrap" IsReadOnly="True"/>
+            <TextBox  x:Name="ReceivingBox" Grid.Row="0" Margin="0,0,5,4" AcceptsReturn="True"  TextWrapping="Wrap" IsReadOnly="True"/>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="150"/>
                 </Grid.ColumnDefinitions>
-                <TextBox  x:Name="SendBox" Grid.Column="0" Margin="0,0,3,0" AcceptsReturn="True"  TextWrapping="Wrap" />
-                <Button x:Name="Send" Grid.Column="1" HorizontalAlignment="Center" Width="200" Height="200" Content="发送"
-                        Click="send_Msg"/>
+                <TextBox  x:Name="SendBox" Grid.Column="0" Margin="0,0,3,5" AcceptsReturn="True"  TextWrapping="Wrap" />
+                <Button x:Name="Send" Grid.Column="1" Height="95" Width="145" HorizontalAlignment="Center" Content="发送"
+                        Click="send_Msg" Margin="0,0,5,5"/>
             </Grid>
 
         </Grid>

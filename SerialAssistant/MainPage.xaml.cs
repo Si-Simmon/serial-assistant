@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text;
 using System.Threading.Tasks;
 using Windows.Devices.Enumeration;
 using Windows.Devices.SerialCommunication;
@@ -147,16 +148,6 @@ namespace SerialAssistant
             glassVisual.StartAnimation("Size", bindSizeAnimation);
         }
 
-        private void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         //打开串口回调
         private void Open_Click(object sender, RoutedEventArgs e)
         {
@@ -200,6 +191,11 @@ namespace SerialAssistant
                     {
                         printf("串口已打开");
                         SerialLock = true;
+
+                      //  TimeSpan time = new TimeSpan(20000);
+                    //    serialDevice.ReadTimeout = time;
+                            
+
                         serialId = serialDeviceInfos[SerialPort.SelectedIndex].Id;
                         Open.Content = "关闭串口";
 
@@ -262,8 +258,14 @@ namespace SerialAssistant
                     uint length = 1;
                     IBuffer buffer = new Windows.Storage.Streams.Buffer(length);
                     await serialDevice.InputStream.ReadAsync(buffer, buffer.Capacity, InputStreamOptions.ReadAhead);
-                    ReceivingBox.Text += RetrieveStringFromUtf8IBuffer(buffer);
-                    ReceivingBox.Select(ReceivingBox.Text.Length, 0);
+
+
+                    //utf-8类型编码
+                    Encoding toEncoding = Encoding.GetEncoding("utf-8");
+                    String myString = toEncoding.GetString(buffer.ToArray());
+
+                    ReceivingBox.Text += myString;
+
                     TextBoxScrollToEnd(ReceivingBox);
                 }
                 catch (Exception ex)
@@ -329,7 +331,14 @@ namespace SerialAssistant
             //       str = CryptographicBuffer.ConvertBinaryToString(BinaryStringEncoding.Utf8, buffer);
             try
             {
-                IBuffer buffer = CryptographicBuffer.ConvertStringToBinary(SendBox.Text, BinaryStringEncoding.Utf8);
+              //  IBuffer buffer = CryptographicBuffer.ConvertStringToBinary(SendBox.Text, BinaryStringEncoding.Utf8);
+
+                Encoding fromEncoding = Encoding.GetEncoding("utf-8");
+
+                //把UTF-8的字符串转换成UTF-8的字节数组
+                byte[] fromBytes = fromEncoding.GetBytes(SendBox.Text);
+                IBuffer buffer = fromBytes.AsBuffer();
+
                 await serialDevice.OutputStream.WriteAsync(buffer);
             }
             catch (Exception ex)
